@@ -1,0 +1,3 @@
+post-build=pantech/cm_ef51/ef51l:6.0.1/MMB29M/ff8ead3c93:userdebug/test-keys
+post-timestamp=1451365199
+pre-device=ef51
