@@ -915,6 +915,30 @@
     return-object v4
 .end method
 
+.method public static patternToHash(Ljava/util/List;)[B
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/internal/widget/LockPatternView$Cell;",
+            ">;)[B"
+        }
+    .end annotation
+
+    .prologue
+    .local p0, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
+
+    const/4 v0, 0x3
+
+    invoke-static {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;B)[B
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
 .method public static patternToHash(Ljava/util/List;B)[B
     .locals 9
     .param p1, "gridSize"    # B
