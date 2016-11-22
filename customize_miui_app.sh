@@ -48,5 +48,7 @@ fi
 
 if [ $1 = "SecurityCenter" ];then
     applyPatch $1 $2
+	#Fix MIUI SecurityCenter icon dislocation
+	sed -i -e 's/sdkInfo: null/sdkInfo:/' -e '/sdkInfo:/a\  minSdkVersion: '\''23'\''\n  targetSdkVersion: '\''23'\''' $2/apktool.yml
 fi
 
