@@ -2371,7 +2371,7 @@
     if-eqz v0, :cond_5
 
     .line 3639
-    invoke-direct {p0, v2}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V
+    # invoke-direct {p0, v2}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V
 
     .line 3625
     :goto_2
@@ -2421,7 +2421,7 @@
     .line 3641
     .restart local v0    # "enabled":Z
     :cond_5
-    invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->unpublishImeSelectorCustomTile()V
+    # invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->unpublishImeSelectorCustomTile()V
 
     goto :goto_2
 .end method
@@ -5104,7 +5104,7 @@
     iput-boolean v7, p0, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
     .line 1839
-    invoke-direct {p0, v2}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V
+    # invoke-direct {p0, v2}, Lcom/android/server/InputMethodManagerService;->publishImeSelectorCustomTile(Landroid/view/inputmethod/InputMethodInfo;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -5158,7 +5158,7 @@
     iput-boolean v7, p0, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
     .line 1849
-    invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->unpublishImeSelectorCustomTile()V
+    # invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->unpublishImeSelectorCustomTile()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
