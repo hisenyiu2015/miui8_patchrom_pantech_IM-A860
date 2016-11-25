@@ -841,7 +841,7 @@
 
     cmp-long v19, v14, v20
 
-    if-lez v19, :cond_2
+    if-lez v19, :cond_1
 
     .line 5177
     array-length v0, v6
@@ -856,7 +856,7 @@
 
     cmp-long v19, v20, v14
 
-    if-gez v19, :cond_1
+    if-gez v19, :cond_0
 
     array-length v0, v6
 
@@ -891,7 +891,7 @@
 
     .line 5179
     .local v7, "didRead":I
-    if-ltz v7, :cond_0
+    if-ltz v7, :cond_1
 
     move-object/from16 v0, p0
 
@@ -912,7 +912,6 @@
     iput-wide v0, v2, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->mBytes:J
 
     .line 5180
-    :cond_0
     const/16 v19, 0x0
 
     move/from16 v0, v19
@@ -931,7 +930,7 @@
     .line 5177
     .end local v7    # "didRead":I
     .end local v16    # "toRead":J
-    :cond_1
+    :cond_0
     move-wide/from16 v16, v14
 
     .restart local v16    # "toRead":J
@@ -939,7 +938,7 @@
 
     .line 5183
     .end local v16    # "toRead":J
-    :cond_2
+    :cond_1
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
 
     .line 5186
@@ -1025,7 +1024,7 @@
 
     move/from16 v1, v20
 
-    if-eq v0, v1, :cond_4
+    if-eq v0, v1, :cond_3
 
     .line 5200
     move-object/from16 v0, p0
@@ -1053,13 +1052,13 @@
 
     move-object/from16 v1, v20
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_2
 
     .line 5201
     const/4 v10, 0x0
 
     .line 5260
-    :cond_3
+    :cond_2
     :goto_2
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
@@ -1076,7 +1075,7 @@
     .restart local v6    # "buffer":[B
     .restart local v11    # "packageUri":Landroid/net/Uri;
     .restart local v14    # "size":J
-    :cond_4
+    :cond_3
     const/16 v18, 0x0
 
     .line 5206
@@ -1104,7 +1103,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_6
+    if-nez v19, :cond_5
 
     .line 5207
     const-string/jumbo v19, "RestoreEngine"
@@ -1170,9 +1169,9 @@
     const/16 v18, 0x1
 
     .line 5249
-    :cond_5
+    :cond_4
     :goto_4
-    if-eqz v18, :cond_3
+    if-eqz v18, :cond_2
 
     .line 5250
     move-object/from16 v0, p0
@@ -1267,7 +1266,7 @@
     .restart local v11    # "packageUri":Landroid/net/Uri;
     .restart local v14    # "size":J
     .restart local v18    # "uninstall":Z
-    :cond_6
+    :cond_5
     :try_start_3
     move-object/from16 v0, p0
 
@@ -1309,7 +1308,7 @@
 
     and-int v19, v19, v20
 
-    if-nez v19, :cond_7
+    if-nez v19, :cond_6
 
     .line 5218
     const-string/jumbo v19, "RestoreEngine"
@@ -1356,7 +1355,7 @@
     goto/16 :goto_4
 
     .line 5223
-    :cond_7
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/backup/BackupManagerService$FullRestoreEngine;->mManifestSignatures:Ljava/util/HashMap;
@@ -1381,7 +1380,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_8
+    if-eqz v19, :cond_7
 
     .line 5227
     iget-object v0, v12, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -1400,7 +1399,7 @@
 
     move/from16 v1, v20
 
-    if-ge v0, v1, :cond_5
+    if-ge v0, v1, :cond_4
 
     .line 5228
     iget-object v0, v12, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -1413,7 +1412,7 @@
 
     move-object/from16 v19, v0
 
-    if-nez v19, :cond_5
+    if-nez v19, :cond_4
 
     .line 5229
     const-string/jumbo v19, "RestoreEngine"
@@ -1458,7 +1457,7 @@
     goto/16 :goto_4
 
     .line 5234
-    :cond_8
+    :cond_7
     const-string/jumbo v19, "RestoreEngine"
 
     new-instance v20, Ljava/lang/StringBuilder;

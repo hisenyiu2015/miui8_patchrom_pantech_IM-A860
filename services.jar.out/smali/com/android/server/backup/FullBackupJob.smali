@@ -53,68 +53,11 @@
 .end method
 
 .method public static schedule(Landroid/content/Context;J)V
-    .locals 7
+    .locals 0
     .param p0, "ctx"    # Landroid/content/Context;
     .param p1, "minDelay"    # J
 
     .prologue
-    const/4 v5, 0x1
-
-    .line 38
-    const-string/jumbo v2, "jobscheduler"
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/job/JobScheduler;
-
-    .line 39
-    .local v1, "js":Landroid/app/job/JobScheduler;
-    new-instance v2, Landroid/app/job/JobInfo$Builder;
-
-    sget-object v3, Lcom/android/server/backup/FullBackupJob;->sIdleService:Landroid/content/ComponentName;
-
-    const/16 v4, 0x5038
-
-    invoke-direct {v2, v4, v3}, Landroid/app/job/JobInfo$Builder;-><init>(ILandroid/content/ComponentName;)V
-
-    invoke-virtual {v2, v5}, Landroid/app/job/JobInfo$Builder;->setRequiresDeviceIdle(Z)Landroid/app/job/JobInfo$Builder;
-
-    move-result-object v2
-
-    .line 41
-    const/4 v3, 0x2
-
-    .line 39
-    invoke-virtual {v2, v3}, Landroid/app/job/JobInfo$Builder;->setRequiredNetworkType(I)Landroid/app/job/JobInfo$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v5}, Landroid/app/job/JobInfo$Builder;->setRequiresCharging(Z)Landroid/app/job/JobInfo$Builder;
-
-    move-result-object v0
-
-    .line 43
-    .local v0, "builder":Landroid/app/job/JobInfo$Builder;
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, p1, v2
-
-    if-lez v2, :cond_0
-
-    .line 44
-    invoke-virtual {v0, p1, p2}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
-
-    .line 46
-    :cond_0
-    invoke-virtual {v0}, Landroid/app/job/JobInfo$Builder;->build()Landroid/app/job/JobInfo;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I
-
-    .line 37
     return-void
 .end method
 
